@@ -55,9 +55,5 @@ function checkResult() {
         document.getElementById("percent").innerHTML = "Wow " + percentage + "%    Well Done !!";
     }
 
-
-
-
-
 }
 
