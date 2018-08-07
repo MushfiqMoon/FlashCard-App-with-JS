@@ -1,59 +1,51 @@
 
 
-function checkResult() {
-    var sum = 0;
-    ans1 = document.getElementById("opt2")
-    ans2 = document.getElementById("opt4")
-    ans3 = document.getElementById("opt8")
-    ans4 = document.getElementById("opt10")
+var numOne = Math.floor(Math.random() * 20) + 1;
+var numTwo = Math.floor(Math.random() * 30) + 1;
 
-    //question1; 
-    if (ans1.checked == true) {
-        sum++;
-        document.getElementById('question01').innerHTML += '&#10004';
-    }else{
-        document.getElementById('question01').innerHTML += '&#10006';
-    }
+var correctAns = numOne + numTwo;
 
-    //question2; 
-    if (ans2.checked == true) {
-        sum++;
-        document.getElementById('question02').innerHTML += '&#10004';
-    }else{
-        document.getElementById('question02').innerHTML += '&#10006';
-    }
-    //question3; 
-    if (ans3.checked == true) {
-        sum++;
-        document.getElementById('question03').innerHTML += '&#10004';
-    }else{
-        document.getElementById('question03').innerHTML += '&#10006';
-    }
-    //question4; 
-    if (ans4.checked == true) {
-        sum++;
-        document.getElementById('question04').innerHTML += '&#10004';
-    }else{
-        document.getElementById('question04').innerHTML += '&#10006';
-    }
+document.getElementById("numberOne").innerHTML = numOne;
+
+document.getElementById("numberTwo").innerHTML = numTwo;
 
 
-    var percentage = sum * 100 / 4;
+function subAns() {
 
-    document.getElementById("score").innerHTML = "Score : " + sum;
+    var answer = document.getElementById("submitAns").value;
 
-    document.getElementById("percent").innerHTML = percentage + "%";
+    // isNaN(submitAns);
 
-    document.getElementById("resultArea").style.backgroundColor = "#e9ecef";
+    if (isNaN(answer)) {
+        document.getElementById("submitoutput").innerHTML = '<h4 class="alert alert-danger">Hey, <span class="wrongTxt"> ' + answer + '</span> that is not a number!!</h4>';
+        // document.getElementById("submitoutput").innerHTML = 'false';
 
-    if (percentage < 50) {
-        document.getElementById("percent").style.color = "red";
-    }else{
-        document.getElementById("percent").style.color = "green";
-    }
-    if (percentage === 100) {
-        document.getElementById("percent").innerHTML = "Wow " + percentage + "%    Well Done !!";
+    } else {
+        if (answer == correctAns) {
+
+            document.getElementById("submitoutput").innerHTML = '<h4 class="alert alert-success">Wow <span class="rytNo">' + answer + '</span> is Right Answer!!</h4>';
+
+        } else {
+
+            document.getElementById("submitoutput").innerHTML = '<h4 class="alert alert-warning">Nop, The answer is <span class="rytNo">' + correctAns + '</h4>';
+
+        }
     }
 
 }
 
+function newCard() {
+
+    numOne = Math.floor(Math.random() * 20) + 1;
+    numTwo = Math.floor(Math.random() * 20) + 1;
+
+    correctAns = numOne + numTwo;
+
+    document.getElementById("numberOne").innerHTML = numOne;
+
+    document.getElementById("numberTwo").innerHTML = numTwo;
+
+    document.getElementById("submitAns").value = "";
+    document.getElementById("submitoutput").innerHTML = " ";
+    
+}
