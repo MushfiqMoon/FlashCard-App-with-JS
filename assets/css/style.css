@@ -1,3 +1,29 @@
-.jumbotron {
-    background: transparent;
+[placeholder]:focus::-webkit-input-placeholder {
+    -webkit-transition: opacity 0.3s 0.3s ease; 
+    -moz-transition: opacity 0.3s 0.3s ease; 
+    -ms-transition: opacity 0.3s 0.3s ease; 
+    -o-transition: opacity 0.3s 0.3s ease; 
+    transition: opacity 0.3s 0.3s ease; 
+    opacity: 0;
+}
+
+.form-control:focus {
+    background-color: #d1d1d1;
+    border-color: #6c757d;
+    box-shadow: none;
+}
+
+.cardNo {
+    display: inline-block;
+}
+
+.mathSymbol {
+    font-size: 2rem;
+}
+
+.wrongTxt{
+    color:#eb1b33;
+}
+.rytNo{
+    color: green;
 }
